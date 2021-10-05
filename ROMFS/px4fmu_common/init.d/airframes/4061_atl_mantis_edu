@@ -149,7 +149,7 @@ param set-default MNT_MODE_IN 1
 param set-default MNT_MODE_OUT 1
 param set-default MNT_MAN_PITCH 2
 param set-default MNT_RC_IN_MODE 1
-param set-default MNT_RATE_PITCH 1
+param set-default MNT_RATE_PITCH 0.5
 
 # RC
 param set-default RC_CHAN_CNT       12
