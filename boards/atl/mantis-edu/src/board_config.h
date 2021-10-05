@@ -61,6 +61,9 @@
 #define FLASH_BASED_PARAMS
 #define RAM_BASED_MISSIONS
 
+// Hack for Yuneec gimbal.
+#define MAVLINK_GIMBAL_V1_MOUNT_CONTROL_PARAM7 1.0f
+
 /*
  * ADC channels
  *

@@ -104,7 +104,11 @@ int OutputMavlinkV1::update(const ControlData *control_data)
 	vehicle_command.param1 = math::degrees(_angle_outputs[1] + _config.pitch_offset);
 	vehicle_command.param2 = math::degrees(_angle_outputs[0] + _config.roll_offset);
 	vehicle_command.param3 = math::degrees(_angle_outputs[2] + _config.yaw_offset);
+#if defined(MAVLINK_GIMBAL_V1_MOUNT_CONTROL_PARAM7)
+	vehicle_command.param7 = MAVLINK_GIMBAL_V1_MOUNT_CONTROL_PARAM7; // MAV_MOUNT_MODE_MAVLINK_TARGETING;
+#else
 	vehicle_command.param7 = 2.0f; // MAV_MOUNT_MODE_MAVLINK_TARGETING;
+#endif
 
 	_vehicle_command_pub.publish(vehicle_command);
 
