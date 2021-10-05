@@ -64,6 +64,9 @@
 // Hack for Yuneec gimbal.
 #define ALT_MANTIS_GIMBAL_HACKS
 
+// Hacks for MAVLink RC button input
+#define ATL_MANTIS_RC_INPUT_HACKS
+
 /*
  * ADC channels
  *
