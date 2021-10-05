@@ -214,8 +214,6 @@ void OutputBase::_calculate_angle_output(const hrt_abstime &t)
 		}
 	}
 
-	float dt = math::constrain((t - _last_update) * 1.e-6f, 0.001f, 1.f);
-
 	const bool q_setpoint_valid = PX4_ISFINITE(_q_setpoint[0]) && PX4_ISFINITE(_q_setpoint[1])
 				      && PX4_ISFINITE(_q_setpoint[2]) && PX4_ISFINITE(_q_setpoint[3]);
 	matrix::Eulerf euler_gimbal{};
@@ -231,7 +229,7 @@ void OutputBase::_calculate_angle_output(const hrt_abstime &t)
 		}
 
 		if (PX4_ISFINITE(_angle_velocity[i])) {
-			_angle_outputs[i] += dt * _angle_velocity[i];
+			_angle_outputs[i] = math::degrees(_angle_velocity[i]);
 		}
 
 		if (compensate[i] && PX4_ISFINITE(euler_vehicle(i))) {

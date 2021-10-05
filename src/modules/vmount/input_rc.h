@@ -80,12 +80,9 @@ protected:
 
 private:
 	int _aux_channels[3] {};
-
-	float _mnt_rate_pitch{0.f};
-	float _mnt_rate_yaw{0.f};
-
-	int _rc_in_mode{0};
-
+	float _mnt_rate_pitch;
+	float _mnt_rate_yaw;
+	int _rc_in_mode;
 	int _manual_control_setpoint_sub{-1};
 
 	bool _first_time{true};
