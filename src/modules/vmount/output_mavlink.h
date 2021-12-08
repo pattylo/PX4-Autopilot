@@ -65,6 +65,8 @@ public:
 
 private:
 	uORB::Publication<vehicle_command_s> _vehicle_command_pub{ORB_ID(vehicle_command)};
+
+	ControlData::Type _previous_control_data_type {ControlData::Type::Neutral};
 };
 
 class OutputMavlinkV2 : public OutputBase
